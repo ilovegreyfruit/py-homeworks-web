@@ -57,3 +57,17 @@ manage.py migrate
 ```bash
 python manage.py runserver
 ```
+## Запуск Docker-контейнера с backend-сервером
+
+### Сборка Docker-образа
+
+Выполните эту команду из корня проекта (где находится Dockerfile):
+
+```bash
+docker build -t django-stocks .
+```
+Запускает контейнер и пробрасывает порт 8000 (контейнер) на 8000 (хост)
+
+```
+docker run -p 8000:8000 django-stocks
+```
